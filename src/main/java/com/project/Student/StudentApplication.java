@@ -9,5 +9,10 @@ public class StudentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StudentApplication.class, args);
 	}
+
 	//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
+
+	void end(){
+	}
+
 }
