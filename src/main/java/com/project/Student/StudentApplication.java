@@ -12,7 +12,5 @@ public class StudentApplication {
 
 	//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
 
-	void end(){
-	}
 
 }
