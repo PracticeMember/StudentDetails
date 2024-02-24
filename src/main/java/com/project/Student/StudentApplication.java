@@ -10,7 +10,7 @@ public class StudentApplication {
 		SpringApplication.run(StudentApplication.class, args);
 	}
 
-	//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
+	//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
 
 
 }

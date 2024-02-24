@@ -1,6 +1,7 @@
 package com.project.Student.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,15 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.Student.DAO.StudentDAO;
 import com.project.Student.Entity.Student;
 import com.project.Student.Service.StudentService;
+import com.project.Student.ServiceJpa.StudentServiceJPA;
 
 @RestController
 @RequestMapping("/college")
 public class StudentController {
 	
-	private StudentService student;
+//	private StudentService student;
+	private StudentServiceJPA student;
 	
+//	@Autowired
+//	public StudentController(StudentService student) {
+//		this.student=student;
+//	}
 	@Autowired
-	public StudentController(StudentService student) {
+	public StudentController(StudentServiceJPA student) {
 		this.student=student;
 	}
 	@GetMapping("/students")
@@ -48,7 +55,7 @@ public class StudentController {
 	
 	@PutMapping("/students")
 	public Student UpdateStudent(@RequestBody Student studentdetails) {
-		return student.updateStudent(studentdetails);
+		return student.save(studentdetails);
 		
 	}
 	
